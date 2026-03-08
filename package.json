@@ -1,0 +1,26 @@
+{
+  "name": "obsidian-leader-key",
+  "version": "0.1.0",
+  "description": "An Obsidian plugin that adds configurable leader-key shortcuts across the app UI.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "leader-key"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "obsidian": "^1.12.3",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "esbuild": "^0.27.3",
+    "typescript": "^5.9.3"
+  }
+}
