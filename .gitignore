@@ -3,4 +3,5 @@ main.js
 main.js.map
 data.json
 .DS_Store
+.obsidian-dev.json
 .

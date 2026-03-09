@@ -9,6 +9,9 @@ help:
 install:
   pnpm install
 
+setup-vault vault_path:
+  pnpm setup:vault "{{vault_path}}"
+
 dev:
   pnpm dev
 
