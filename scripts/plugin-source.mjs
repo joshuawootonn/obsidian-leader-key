@@ -64,7 +64,7 @@ const resolveVaultPath = async (vaultArg) => {
   }
 
   throw new Error(
-    `Vault path is not configured. Pass --vault /abs/path or run "pnpm setup:vault -- --vault /abs/path".`
+    `Vault path is not configured. Pass --vault /abs/path or run "just setup-vault /abs/path".`
   );
 };
 
@@ -181,14 +181,7 @@ export const status = async ({ vaultArg }) => {
   console.log(`Repo output path: ${path.join(repoRoot, ".obsidian", "plugins", pluginId)}`);
   console.log(`Config file: ${configPath}`);
 
-  let vaultPath;
-  try {
-    vaultPath = await resolveVaultPath(vaultArg);
-  } catch (error) {
-    console.log("Mode: unknown");
-    console.log(error.message);
-    return;
-  }
+  const vaultPath = await resolveVaultPath(vaultArg);
 
   const paths = getPaths(vaultPath, pluginId);
   const modeInfo = await describeMode(paths.vaultPluginPath, paths.repoPluginPath);

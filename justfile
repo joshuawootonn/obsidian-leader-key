@@ -9,8 +9,8 @@ help:
 install:
   pnpm install
 
-setup-vault vault_path="":
-  if [ -n "{{vault_path}}" ]; then pnpm setup:vault -- --vault "{{vault_path}}"; else pnpm setup:vault; fi
+setup-vault vault_path:
+  pnpm setup:vault -- --vault "{{vault_path}}"
 
 dev:
   pnpm dev
@@ -27,8 +27,8 @@ check:
 plugin-status:
   pnpm plugin:status
 
-use-local vault_path="":
-  if [ -n "{{vault_path}}" ]; then pnpm plugin:use-local -- --vault "{{vault_path}}"; else pnpm plugin:use-local; fi
+use-local:
+  pnpm plugin:use-local
 
-use-synced vault_path="":
-  if [ -n "{{vault_path}}" ]; then pnpm plugin:use-synced -- --vault "{{vault_path}}"; else pnpm plugin:use-synced; fi
+use-synced:
+  pnpm plugin:use-synced

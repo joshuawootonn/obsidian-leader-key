@@ -10,14 +10,13 @@ Install dependencies:
 pnpm install
 ```
 
-Link the plugin into a local vault:
+Configure your vault path once:
 
 ```bash
-pnpm setup:vault "/path/to/your/vault"
+just setup-vault /abs/path/to/your/vault
 ```
 
-This writes a local `.obsidian-dev.json` file in the repo and creates or updates the vault plugin symlink at `.obsidian/plugins/leader-key`.
-If that plugin directory already exists as a normal folder, the script backs it up, preserves `data.json`, and then replaces it with the symlink.
+This writes `.obsidian-dev.json` in the repo so plugin source commands can run without passing a vault path each time.
 
 Start watch mode:
 
@@ -40,8 +39,7 @@ pnpm build
 Use these commands:
 
 ```bash
-just use-local /abs/vault/path
-# or: just use-local
+just use-local
 just dev
 just plugin-status
 just use-synced
