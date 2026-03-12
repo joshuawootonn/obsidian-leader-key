@@ -5,9 +5,14 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "setup:vault": "node scripts/setup-vault.mjs",
     "dev": "node esbuild.config.mjs",
-    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production"
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs production",
+    "test": "node --test",
+    "check": "tsc --noEmit --skipLibCheck",
+    "setup:vault": "node scripts/setup-vault.mjs",
+    "plugin:status": "node scripts/plugin-source.mjs status",
+    "plugin:use-local": "node scripts/plugin-source.mjs use-local",
+    "plugin:use-synced": "node scripts/plugin-source.mjs use-synced"
   },
   "keywords": [
     "obsidian",

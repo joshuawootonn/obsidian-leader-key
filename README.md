@@ -30,3 +30,19 @@ Build the plugin:
 ```bash
 pnpm build
 ```
+
+## Local vs Synced Mode
+
+- **Local build mode**: your vault plugin path is a symlink to this repo's local output at `.obsidian/plugins/leader-key`.
+- **Synced static mode**: your vault plugin path is a normal folder managed by Obsidian Sync.
+- Backups are stored at `<vault>/.obsidian/plugin-backups/leader-key/` (never inside `.obsidian/plugins/`).
+
+Use these commands:
+
+```bash
+just use-local /abs/vault/path
+# or: just use-local
+just dev
+just plugin-status
+just use-synced
+```
